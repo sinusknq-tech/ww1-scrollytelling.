@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f5f5f7;        /* Helles Apple-typisches Hellgrau */
+    color: #1d1d1f;              /* Fast schwarz, aber weich */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 100vh;
+    scroll-snap-type: x mandatory;
+}
+
+/* Fortschrittsbalken – dezent */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: #0071e3;         /* Apple-blau */
+    z-index: 100;
+    transition: width 0.1s ease;
+    box-shadow: 0 0 5px rgba(0,113,227,0.3);
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    width: max-content;
+}
+
+.slide {
+    min-width: 100vw;
+    height: 100vh;
+    padding: 4rem 5rem;
+    scroll-snap-align: start;
+    overflow-y: auto;
+    background: white;            /* Weiße Kacheln auf hellgrauem Grund */
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.02);
+}
+
+/* Typografie – großzügig */
+h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #1d1d1f;
+    margin-bottom: 0.2rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: #1d1d1f;
+    border-left: 6px solid #0071e3;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.authors {
+    font-size: 2rem;
+    font-weight: 350;
+    color: #86868b;               /* Apple-Grau für Subtilität */
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #86868b;
+    margin-bottom: 2rem;
+}
+
+ul {
+    list-style: none;
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    margin-left: 1rem;
+}
+
+li {
+    margin: 0.8rem 0;
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+li::before {
+    content: "•";
+    color: #0071e3;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.quelle {
+    font-size: 0.9rem;
+    color: #86868b;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+blockquote {
+    background: #f5f5f7;
+    padding: 1.8rem;
+    border-radius: 18px;
+    font-style: italic;
+    color: #3a3a3c;
+    border-left: 4px solid #0071e3;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.fact-box {
+    background: #f5f5f7;
+    padding: 2rem;
+    border-radius: 24px;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: #1d1d1f;
+    border: 1px solid #eaeaea;
+}
+
+.slide-img {
+    max-width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid #f0f0f0;
+}
+
+.spacer-top {
+    margin-top: 1.5rem;
+}
+
+.img-placeholder {
+    background: #f0f0f0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #86868b;
+    min-height: 200px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    .authors { font-size: 1.5rem; }
+    ul { font-size: 1.1rem; }
+    .slide { padding: 2rem; }
+    .grid-2 { grid-template-columns: 1fr; }
+}
